@@ -1,10 +1,10 @@
 // Configurazione
-const OLLAMA_HOST = 'https://026d77ff356f.ngrok-free.app/api/generate'; // Rimosso lo slash finale per evitare doppio slash nell'URL
+const OLLAMA_HOST = 'https://026d77ff356f.ngrok-free.app'; // Rimosso lo slash finale per evitare doppio slash nell'URL
 const MODEL_ID = 'gemma3:270m';
 
-// Disabilitazione del CORS proxy
-const USE_CORS_PROXY = false;
-const CORS_PROXY = '';
+// Abilitazione del CORS proxy
+const USE_CORS_PROXY = true;
+const CORS_PROXY = 'https://corsproxy.io/?';
 
 // Elementi DOM
 const chatMessages = document.getElementById('chat-messages');
@@ -50,13 +50,13 @@ function sendMessage() {
     };
 
     // Costruisci l'URL dell'API
-    const apiUrl = `${OLLAMA_HOST}/api/generate`;
+    const apiUrl = USE_CORS_PROXY ? `${CORS_PROXY}${OLLAMA_HOST}/api/generate` : `${OLLAMA_HOST}/api/generate`;
     
     // Utilizzo di XMLHttpRequest per evitare problemi CORS
     const xhr = new XMLHttpRequest();
     xhr.open('POST', apiUrl, true);
     xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.setRequestHeader('ngrok-skip-browser-warning','69420');
+    
     // Gestione della risposta in streaming
     let botResponse = '';
     let buffer = '';
@@ -84,9 +84,10 @@ function sendMessage() {
     };
     
     xhr.onerror = function() {
-        botMessageDiv.textContent = 'Si è verificato un errore durante la connessione al server. Verifica che il server sia raggiungibile.';
+        botMessageDiv.textContent = 'Si è verificato un errore durante la connessione al server. Potrebbe essere un problema di CORS o di connessione. Verifica che il server sia raggiungibile.';
         botMessageDiv.classList.add('error-message');
         console.error('Errore di rete:', xhr.status, xhr.statusText);
+        console.log('URL utilizzato:', apiUrl);
     };
     
     xhr.onload = function() {
