@@ -1,5 +1,5 @@
 // Configurazione
-const OLLAMA_HOST = 'https://cors-anywhere.herokuapp.com/https://026d77ff356f.ngrok-free.app/api/generate'; // Rimosso lo slash finale per evitare doppio slash nell'URL
+const OLLAMA_HOST = 'https://026d77ff356f.ngrok-free.app/api/generate'; // Rimosso lo slash finale per evitare doppio slash nell'URL
 const MODEL_ID = 'gemma3:270m';
 
 // Disabilitazione del CORS proxy
