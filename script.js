@@ -130,7 +130,7 @@ chatInput.addEventListener('keypress', (e) => {
 
 // Messaggio di benvenuto
 window.addEventListener('DOMContentLoaded', () => {
-    addMessage('Ciao! Sono Guido il tuo assistente meccanico! PIT STOP! false);
+    addMessage('Ciao! Sono Guido il tuo assistente meccanico! PIT STOP!', false);
 });
 
 
