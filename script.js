@@ -56,7 +56,7 @@ function sendMessage() {
     const xhr = new XMLHttpRequest();
     xhr.open('POST', apiUrl, true);
     xhr.setRequestHeader('Content-Type', 'application/json');
-    
+    xhr.setRequestHeader('ngrok-skip-browser-warning','69420');
     // Gestione della risposta in streaming
     let botResponse = '';
     let buffer = '';
