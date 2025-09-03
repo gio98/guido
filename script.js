@@ -1,5 +1,5 @@
 // Configurazione
-const OLLAMA_HOST = 'https://026d77ff356f.ngrok-free.app'; // Rimosso lo slash finale per evitare doppio slash nell'URL
+const OLLAMA_HOST = 'https://ef3983ae3c31.ngrok-free.app'; // Rimosso lo slash finale per evitare doppio slash nell'URL
 const MODEL_ID = 'gemma3:270m';
 
 // Abilitazione del CORS proxy
