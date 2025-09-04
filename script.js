@@ -1,5 +1,5 @@
 // Configurazione
-const OLLAMA_HOST = 'https://unlikely-grand-prawn.ngrok-free.app/'; // Rimosso lo slash finale per evitare doppio slash nell'URL
+const OLLAMA_HOST = 'https://unlikely-grand-prawn.ngrok-free.app'; // Rimosso lo slash finale per evitare doppio slash nell'URL
 const MODEL_ID = 'gemma3:270m';
 
 // Abilitazione del CORS proxy
