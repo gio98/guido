@@ -1,6 +1,6 @@
 // Configurazione
 const OLLAMA_HOST = 'https://unlikely-grand-prawn.ngrok-free.app'; // Rimosso lo slash finale per evitare doppio slash nell'URL
-const MODEL_ID = 'gemma3:270m';
+const MODEL_ID = 'guido:latest';
 
 // Abilitazione del CORS proxy
 const USE_CORS_PROXY = true;
